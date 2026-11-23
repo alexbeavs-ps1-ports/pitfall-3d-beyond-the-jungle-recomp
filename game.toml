@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Pitfall 3D - Beyond the Jungle"
+id = "SLUS-00254"
+players = 1
+exe = "disc/SLUS_002.54"
+disc = "disc/Pitfall 3D - Beyond the Jungle (USA).cue"
+discs = ["disc/Pitfall 3D - Beyond the Jungle (USA).cue"]
+disc_serials = ["SLUS-00254"]
+load_address = "0x80080000"
+entry_pc = "0x8008DB88"
+text_size = "0x00013800"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Pitfall 3D - Beyond the Jungle (USA).bin"
+cue_name = "Pitfall 3D - Beyond the Jungle (USA).cue"
+boot_exe = "SLUS_002.54"
+known_sizes = [549601248]
+known_md5 = [
+  "431ec433e3414a68a88ad2ddc8433c18",
+]
+known_sha1 = [
+  "0a9d92233b45cdca15827514ed74d482e265670a",
+]
+known_crc32 = [
+  "85185805",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Pitfall 3D - Beyond the Jungle Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "6a236fd89e9a88869ccfa7d0440861d741fcd22b81733be66333ade1a5465e36"

@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "pitfall-3d-beyond-the-jungle-psx",
+  "name": "Pitfall 3D - Beyond the Jungle",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "pitfall-3d-beyond-the-jungle-recomp",
+  "rom_identity": {
+    "crc32": [
+      "85185805"
+    ],
+    "md5": [
+      "431ec433e3414a68a88ad2ddc8433c18"
+    ],
+    "sha1": [
+      "0a9d92233b45cdca15827514ed74d482e265670a"
+    ],
+    "disc_serials": [
+      "SLUS-00254"
+    ],
+    "sizes": [
+      549601248
+    ],
+    "filenames": [
+      "Pitfall 3D - Beyond the Jungle (USA).cue",
+      "Pitfall 3D - Beyond the Jungle (USA).bin"
+    ],
+    "track_counts": [
+      1
+    ],
+    "disc_fps": [
+      "6a236fd89e9a88869ccfa7d0440861d741fcd22b81733be66333ade1a5465e36"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH1001.BIN",
+    "profile": "SCPH1001",
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/pitfall-3d-beyond-the-jungle-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "pitfall-3d-beyond-the-jungle-*-windows-x64.zip",
+      "linux-x64": "pitfall-3d-beyond-the-jungle-*-linux-x64.zip",
+      "macos-arm64": "pitfall-3d-beyond-the-jungle-*-macos-arm64.zip",
+      "macos-x64": "pitfall-3d-beyond-the-jungle-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "pitfall_3d_beyond_the_jungle.exe",
+    "linux": "pitfall_3d_beyond_the_jungle",
+    "macos": "pitfall_3d_beyond_the_jungle"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/pitfall-3d-beyond-the-jungle-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}
